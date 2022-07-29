@@ -1,9 +1,17 @@
 'use strict'
 
-let fkq = 'pretty'
-console.log(fkq);
+let money = 30000 // Месячный бюджет
+let profit = 'частные занятия 400' // Дополнительный доход
+let expenses = 'транспорт 190, проживание 1000, питание 2200' // Расходы
+let purpose = 50000 // Хотим накопить
+let period = 3
 
-let num = '300000'
-console.log('num of', num, 'equals', num) 
+console.log(typeof money, typeof profit);
+console.log(expenses.length);
 
-// мои тестовые штучки
+const mission = purpose
+
+console.log('“Период равен', period,' месяцев” и “Цель заработать', mission, 'рублей/долларов ”')
+
+let budgetDay = money/30
+console.log(budgetDay)
