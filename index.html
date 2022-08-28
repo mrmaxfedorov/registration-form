@@ -5,10 +5,62 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+  <title>Регистрация</title>
 </head>
 <body>
-  <p>Hello from the other side</p>
+  <div class="wrapper">
+    <form class="form-registration">
+      <h2 class="form-title">Регистрация</h2>
+      <div class="form__email">
+        <span class="starOne"></span>
+        <span class="form__email-title">Email</span>
+        <input id="email-reg" type="email" placeholder="Введите email" class="form__email-input">
+        <span class="error" id="email_null">Поле обязательно для заполнения</span>
+        <span class="error" id="email_invalid">Email невалидный</span>
+      </div>
+      <div class="form__password">
+        <span class="starTwo"></span>
+        <span class="form__password-title">Пароль</span>
+        <input id="password-reg" type="text" placeholder="Введите пароль" class="form__password-input">
+        <span class="error" id="password_null">Поле обязательно для заполнения</span>
+        <span class="error" id="password_valid">Пароль должен содержать как минимум 8 символов</span>
+      </div>
+      <div class="form__bottom">
+        <span class="starThree"></span>
+        <input class="checkbox" type="checkbox" id="check">
+        <label for="check">Я согласен с <u>Правилами пользования приложением</u></label>
+        <div class="form-special"></div>
+        <span class="error" id="check-null">Поле обязательно для заполнения</span> <br>
+      </div>
+
+      <button id="reg-btn" class="form__submit">Регистрация</button>
+    </form>
+<!-- 
+    <form class="form-login">
+      <h2 class="form-title">Вход</h2>
+      <div class="form__item">
+        <span class="form__item-title">Email</span>
+        <input type="text" placeholder="Введите email" class="form__item-input">
+        <span class="error" id="email_null">Поле обязательно для заполнения</span> <br>
+        <span class="error" id="email_valid">Email невалидный</span>
+      </div>
+      <div class="form__item">
+        <span class="form__item-title">Пароль</span>
+        <input type="text" placeholder="Введите пароль" class="form__item-input">
+      </div>
+
+      <div class="form__item">
+        <input type="checkbox" id="check">
+        <label for="check">Я согласен получать обновления на почту</label>
+      </div>
+
+      <button class="form__submit">Вход</button>
+    </form>
+  </div> -->
   <script src="/script.js"></script>
 </body>
 </html>
