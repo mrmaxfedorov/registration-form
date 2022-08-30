@@ -23,6 +23,7 @@ let emailAddress = ''
 let password = ''
 let checkbox = null
 let users = {}
+let emailValid, passwordValid, checkboxValid = false
 
 emailReg.addEventListener('input', (e) => {
   emailAddress = e.target.value
@@ -34,7 +35,7 @@ passwordReg.addEventListener('input', (e) => {
 btnReg.addEventListener('click', (e) => {
   e.preventDefault()
   registrationValidation()
-  console.log(users)
+  validationSuccessful()
 })
 
 checkboxReg.addEventListener('change', (e) => {
@@ -48,6 +49,7 @@ const registrationValidation = () => {
     emailReg.style.borderColor = '#CB2424'
     emailName.style.color = '#CB2424'
     starOne.style.color = '#CB2424'
+    emailValid = false
   } else {
     emailRegNull.style.display = 'none'
     emailReg.style.borderColor ='#787878'
@@ -64,6 +66,7 @@ const registrationValidation = () => {
       emailName.style.color = '#787878'
       starOne.style.color = 'black'
       users.email = emailAddress
+      emailValid = true
     }
   }
   if (password.length == '') {
@@ -73,6 +76,7 @@ const registrationValidation = () => {
     passwordLength.style.display = 'none'
     starTwo.style.color = '#CB2424'
     starTwo.style.margin = '-6px'
+    passwordValid = false
   } else {
     passwordNull.style.display = 'none'
     passwordReg.style.borderColor ='#787878'
@@ -91,18 +95,30 @@ const registrationValidation = () => {
       starTwo.style.color = 'black'
       starTwo.style.margin = '-6px'
       users.password = password
+      passwordValid = true
     }
   }
   if (!checkbox) {
     checkNull.style.display = 'block'
     starThree.style.color = '#CB2424'
     formBottom.style.margin = '0px'
+    checkboxValid = false
   } else {
     checkNull.style.display = 'none'
     starThree.style.color = 'black'
     formBottom.style.margin = '0px'
+    checkboxValid = true
   }
 }
+
+const validationSuccessful = () => {
+  if (emailValid && passwordValid && checkboxValid) {
+    console.log();
+    localStorage.users = JSON.stringify(users);
+    console.log(localStorage);
+  }
+}
+
 
 const validateEmail = (email) => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
